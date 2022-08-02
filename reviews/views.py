@@ -2,4 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Welcome to Bookr")
+    name = request.GET.get("name") or " to Bookr"
+    return HttpResponse("Welcome{}!".format(name))
