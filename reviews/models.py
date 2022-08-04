@@ -6,6 +6,9 @@ class Publisher(models.Model):
     website = models.URLField(help_text="The Publisher's website")
     email = models.EmailField(help_text="The Publisher's email address.")
 
+    def __str__(self):
+        return self.name
+
 class Book(models.Model):
     title = models.CharField(max_length=70, help_text="The title of the book.")
     publication_date = models.DateField(verbose_name="Date the book was published")
